@@ -1,0 +1,99 @@
+*** Creating an API to list Languages and Update list of Languages***
+----------------------------------------------------------------------
+1. create a project called api_example
+        django-admin startproject api_example
+
+2. Install django rest framework
+        pipenv install djangorestframework
+
+3. set the rest_framework name in Installed Apps to activate
+        INSTALLED_APPS=[
+            'rest_framework',
+        ]
+
+4. creating a database
+        python manage.py migrate
+
+5. create a superuser
+        python manage.py createsuperuser
+
+6. create a app called languages
+        python manage.py startapp languages
+
+7. set the languages name in Installed Apps to activate
+        INSTALLED_APPS=[
+            'languages',
+        ]
+
+8. set the languages urls path in project urls file
+        from django.urls import path, include
+        urlpatterns = [
+            path('', include("languages.urls")),
+        ]
+
+9. create a new urls.py file in languages app folder
+
+10. create a model called Language with name & paradigm as fields
+        from django.db import models
+        # Create your models here.
+        class Language(models.Model):
+            name = models.CharField(max_length=50)
+            paradigm = models.CharField(max_length=50)
+
+11. use a migrate command to update the model.
+        python manage.py makemigrations
+        python manage.py migrate
+
+12. register a model in admin.py file
+        from .models import Language
+        # registering the model Language to display on admin panel
+        admin.site.register(Language)
+
+        python manage.py runserver
+
+13. create a serializers file in app folder
+        from rest_framework import serializers  #3rd party module
+        from .models import Language
+        
+        # using model serializers module
+        class LanguageSerializer(serializers.ModelSerializer):
+            class Meta:
+                model = 'Language'
+                fields = ('id', 'name', 'paradigm')
+
+14. Create a views.py for serializers
+        from django.shortcuts import render
+        from rest_framework import viewsets # import 3rd party viewsets module
+        from .models import Language
+        from .serializers import LanguageSerializer # import LanguageSerializer module
+
+
+        class LanguageView(viewsets.ModelViewSet):
+            queryset = Language.objects.all()
+            serializer_class = LanguageSerializer
+
+15. Set the urls for serializers views
+        from django.urls import path, include
+        from . import views
+        
+        # using routers module to route to specific index 
+        from rest_framework import routers
+
+        # Initiate the router
+        router = routers.DefaultRouter()
+
+        # Register the router and set the endpoints
+        router.register('languages', views.LanguageView)
+
+        urlpatterns = [
+            path('', include(router.urls)),
+        ]
+
+16. run the server
+        python manage.py runserver
+
+17. Check the languages by clicking the link and update the languages
+         "languages": "http://127.0.0.1:8000/languages/"
+
+18. Can get the Language by specifiying id number of Language too.
+        http://127.0.0.1:8000/languages/2/

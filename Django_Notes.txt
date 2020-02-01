@@ -1,0 +1,301 @@
+Django follow the MVT (Mode, View, Template) architecture. Where M=DB Schema, V=Logic of application, T=Front-end
+
+Initial Setup:
+--------------
+  #The Command Line:
+  ------------------
+  While there are many possible commands we can use, in practice there are six used most frequently in Django development.
+  • cd (change down a directory)
+    Eg. let’s change into our Desktop directory
+    $ cd ~/Desktop 
+  
+  • pwd (print working directory) 
+    Eg. we can use pwd which will print out the path of our current directory.
+    $ pwd
+    /home/areeb/Desktop
+  
+  • mkdir (make directory) 
+    Eg. Let’s create a new directory folder with mkdir,cd into it,and add a new file index.html.
+    $mkdir new_folder
+    $cd new_folder
+
+  • cd .. (change up a directory) 
+    Eg. $cd new_folder
+  
+  • touch (create a new file)
+    Eg. $ touch index.html
+
+  • ls (list files in your current directory) 
+    Eg. $ ls
+    index.html
+
+Installation of Django:
+-----------------------
+  Steps to Install Django and Set Up a Virtual Environment:
+  
+  Step 1. Installing Python 3:
+  ----------------------------
+    For Windows PowerShell Users
+      You can Download through python website. While installing Python 3 don’t forget to tick the option “Add Python 3 to your path” when the installation prompt opens.
+        python –version
+        pip --version
+    
+    For Ubuntu Terminal Users
+      This command will upgrade your APT repository.
+      $ sudo apt-get update && sudo apt-get -y upgrade
+
+      $ sudo apt-get install python3
+
+      To verify that Python 3 was installed correctly just type in:
+      $ python3 -V
+
+      Now, to install pip:
+      $ sudo apt-get install -y python3 pip
+
+      To check that pip installed correctly:
+      $ pip3 -V
+
+  Step 2. Installing Virtualenv:
+  ------------------------------
+    For Windows PowerShell Users
+      pip install virtualenv
+
+    For Ubuntu Terminal Users
+      $ pip3 install virtualenv
+      
+      To check the version of virtualenv:
+      $ virtualenv –-version
+
+  Step 3. Installing Django:
+  --------------------------
+    For Windows PowerShell Users
+      pip install django
+
+    For Ubuntu Terminal Users
+      This command will install Django globally on your system
+      $ pip install -e django
+
+  Step 4. Installing a Python IDE
+  Step 5. Installing Xampp
+  Step 6. Setting Up a Virtual Environment
+  ----------------------------------------
+    For Windows PowerShell Users
+      virtualenv your_project_name
+
+      Now change your directory to the virtual environment.
+      Then execute this command:
+      ./scripts/activate.bat
+      ./scripts/activate
+
+      Note: If any error arises like Below,
+            ./scripts/activate : File C:\Users\****\myenv\scripts\activate.ps1 cannot be loaded because running
+            scripts is disabled on this system. For more information, see about_Execution_Policies at
+            https:/go.microsoft.com/fwlink/?LinkID=135170.
+            At line:1 char:1
+            + ./scripts/activate
+            + ~~~~~~~~~~~~~~~~~~
+                + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+                + FullyQualifiedErrorId : UnauthorizedAccess
+            
+            Solution:
+              Open PowerShell as 'Administrator'.
+              
+              Type the command
+                set-executionpolicy remotesigned
+
+    For Ubuntu Terminal Users
+      You have to make the directory of the virtual environment/where you want to make the virtual environment and the rest is almost the same as windows.
+
+      Execute this command in terminal:
+      $ pyvenv environment_name
+
+      This will create a virtual environment with the name of your choice.
+      $ ls environment_name
+      
+      Look for the bin folder in the environment.
+      $ source environment_name/bin/activate
+
+How to Create Your First Django Project:
+----------------------------------------
+
+  For Windows PowerShell Users
+    pip install django
+
+    After that, type this command:
+    django-admin startproject project-name
+
+  For Ubuntu Terminal Users
+    $ pip install -e django
+
+    This should install Django in your virtual environment.
+    $ Django-admin.py startproject project-name.
+
+  Running the Test Server
+  -----------------------
+    Python manage.py runserver
+
+    Now, you can run the server application, just go to your browser and type this in the url bar:
+    Localhost:8000
+
+Django MTV Architecture – Understanding Components & Working:
+-------------------------------------------------------------
+  MTV Architecture:
+  -----------------
+  MTV instead of MVC in django:
+
+  Model      <------->  Model
+  View       <------->  Template
+  Controller <------->  View
+
+  Model      - Data description
+  View       - Handles display of Users
+  Template   - Controls the user interaction
+  Controller - Presentation layers of Users
+  
+  MTV Architecture Components (Model, Template, and View):
+  --------------------------------------------------------
+  This is a variation of the MVC pattern as you can see in the acronym itself the Template keyword replaces the Controller. Although, the Template is not exactly functioning as the controller and has some different properties than the controller.
+
+  The definitions of Model still remain the same that is, the Model contains the logical file structure of the project and is the middleware & data handler between database and view. The Model provides a definition of how the data formats as coming from the view so, it stores in the database and vice-versa, i.e., the retrieving information from the database transfers to the view in the displayable format.
+  
+  The View in MTV architecture can look like the controller, but it’s not. The View in this MTV architecture is formatting the data via the model. In turn, it communicates to the database and that data which transfer to the template for viewing.
+
+          | Model |                           | View  |                                |Template|
+          ---------          whole data       ---------        Input by User           ----------
+            Logical         |---------->        Data           |---------->            Presentation
+        data structure      <----------|      Formatting       <----------|               Layer
+                            design,update,                      Data to display
+                              delete
+  see image for reference:
+  https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/03/MTV-instead-of-MVC-in-Django.jpg
+
+  Working of MTV Architecture:
+  ----------------------------
+  see image for reference:
+  https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/03/Working-of-MTV-Architecture-1.jpg
+
+  we have some components and two regions i.e., server side and client side. Here you will notice that the View is on the server-side part while the template is on the client side.
+  -Now, when we request for the website, the interface through which we use to make that request via our browser was the Template. Then that request transmits to the server for the management of view file.
+  -Django is literally a play between the requests and responses. So whenever our Template is updating it’s the input (request) we sent from here which on the server was seen by the View. And, then it transports to the correct URL. It’s one of the important components of Django MTV architecture. There, the URL mapping in Django is actually done in regular expressions. These expressions are much more understandable than IP addresses. It also helps with the SEO task.
+  -Now after the sending of request to the correct URL, the app logic applies and the model initiates to correct response to the given request. Then that particular response is sent back to the View where it again examines the response and transmits it as an HTTP response or desired user format. Then, it again renders by the browser via Templates.
+
+  An easier real-life working of above functioning would be –
+
+  When you login in a website (Django based), you open the login page. It again happens without the need of the Model. It is because Views will process the request and send it to the URL of the login page. Then, it will be a response by the server, from there to the browser.
+  -After that, you enter your credentials in the given Template, HTML form. From there the data is again sent to the view, this time this request rectifies and the model is given data. Then the Model reads and verifies the data that user provides within the connected database.
+  -If the user data matches it will send the relevant user data like profile image, name and (other things depending on the type of website) to the Views. It will then format the same in desired response and will transmit the same to the client.
+  -Otherwise, the Model will send a negative result to the Views. In turn, it will rout it to the login page again alongside an error message.
+  That’s how the Django MTV architecture is actually working.
+
+Django Models – Learn to Create Your First Django Model:
+--------------------------------------------------------
+  Introduction to Django Models:
+  ------------------------------
+  -A Model in Django is a class imported from the django.db library that acts as the bridge between your database and server. This class is a representation of the data structure used by your website. It will directly relate this data-structure with the database. So that you don’t have to learn SQL for the database.
+  -Also, every database implements SQL in a different way, because they all are made to complete a different task.
+  This creates a bit of a problem for the developers, for example:
+  -You may know MySQL very well, but what will you do if your task can only be achieved by MongoDB?
+  -There you can’t invest your time in understanding the new database and also trying to figure out how to integrate your server with the database.
+  -This problem is overseen by Django ORM, which is a great tool and provides you with the ability to write python data-structures instead of a database language. Thus making your work much easier.
+  -As you can see the two data structures/ datasets, which one do you think is more readable? Python is my answer.
+
+  see image for reference:
+  https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/03/SQL-Django-ORM-Commands-example.jpg
+
+  -This makes it clear for someone who knows Python well and shows the importance of Django ORM over the SQL.
+  -When you create a model, Django executes SQL to design a corresponding table in the database (as shown below) without the need to write even a single line of SQL. Django prefixes the name of the table with your Django application name. Also, the model links related information in the database.
+
+  see image for reference:
+  https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/03/Table-Example-in-database.jpg
+
+  -You can also retrieve the data in Python and that gives you all the functionalities of Python, that you will ever need. Also, if you are wondering where the model python code is, it’s in the models.py file in the custom application you have created.
+
+  see image for reference:
+  https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/03/models.py-file-in-custom-application.png
+
+  -This file is only importing the models file of the django.db library
+    *models.py:
+      from django.db import models
+     
+  Steps to create Django Model:
+  -----------------------------
+  1. Firstly, create a new app by this command:
+      django-admin startapp student
+
+  2. Open the models.py file in that and write this code in it
+      from django.db import models
+     
+      #Creating models for student app
+
+      class Student(models.Model):
+      roll_no = models.TextField()
+      name = models.TextField(max_length = 40)
+      stud_class = models.TextField()
+      department = models.TextField()
+
+      -Here you can see that the models class has lots of methods for fields corresponding to web input. We are using text fields here as they are easier to implement and takes in any input.
+
+  3. Now, execute these commands
+
+      python manage.py makemigrations
+      python manage.py migrate
+
+  
+  Advantages of Django Models:
+  ----------------------------
+
+
+
+
+
+
+
+
+Installation of GIT:
+--------------------
+#OnUbuntu : sudo apt install git-all
+
+Git configuration:
+------------------
+  Git provides configuration file to set the initial parameters for the repository. There are 3 levels of configurations:
+
+  System-level configuration: applies to the entire computer that it is installed on
+  User-level configuration: for a particular user
+  Repository-level configuration: Project level
+
+  Levels:	                   |    System	                  |     User	                     |    Project
+  -------------------------------------------------------------------------------------------------------------------
+  Config file location:	          /etc/gitconfig	                ~/.gitconfig	                  Project/.git/config
+  List the configurations	        git config --system --list	    git config --global --list	    git config --list
+  Edit the configuration:	        git config --system --edit	    git config --global --edit	    git config --edit
+
+  Below are the git basic commands used to set the configurations:
+  To set the levels of the configurations use the respective flags (--system, --global, none)
+
+  --Set the username for a logged in user, applicable to all the repositories
+  git config --global user.name "name"
+
+  --Set the password for the logged in user, applicable to all the repositories
+  git config --global user.password “yourpasswordString”
+  git config --global user.email "email"
+
+  --Set any editor of your preference as a system wide setting
+  git config --system core.editor "vim"
+
+  --Set the default tool as ‘vimdiff’ to be used for merging branches for only a project
+  cd ~/project
+  git config merge.tool "vimdiff"
+
+  --set a unique username for a project
+  git config user.name “user1”
+
+  --set a unique password for the user of this project
+  git config user.password “user1@123”
+
+  --Add colors and show git branches in bash terminal edit the .bash_profile file:
+  vi ~/.bash_profile
+  parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
+  }
+  export PS1="\u@\h:\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $"
+

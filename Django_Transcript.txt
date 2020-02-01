@@ -1,0 +1,30 @@
+Setting up a Django project:
+----------------------------
+  #What is Django:
+  #Install Python and Django:
+  #Create a Django Project:
+  #Create a Django App:
+
+Working with Django Models and the Admin:
+-----------------------------------------
+  #Models, routing, views and templates:
+  #Django Models
+  #Django Views
+  #Implement Models and Fields
+  #Django Migrations
+  #Import CSV data
+  #Work with Django Admin
+  #Query data with Django ORM
+
+Building URL Handlers and Views:
+--------------------------------
+  #Understand URL patterns
+  #Implement URL patterns
+  #Implement Django Views
+
+Building Django Templates:
+--------------------------
+  #Django Templates
+  #Implement Django Templates
+  #Structure templates
+  #Integrate CSS and JavaScript 

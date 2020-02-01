@@ -1,0 +1,8 @@
+CharField must have max_length()
+
+TextField can have blank =True and null = True
+
+DecimalField must have decimal_places and max_digits=10000
+
+
+wr

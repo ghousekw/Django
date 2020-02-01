@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e8743da7-1198-4b84-84f1-896a44c45ee7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Django.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/User.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/MANIFEST.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/README.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/dist/django-polls-0.1.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/django_polls.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/django_polls.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/django_polls.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/django_polls.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/polls/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/polls/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/polls/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/polls/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/polls/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/polls/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/polls/static/polls/images/background.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/polls/static/polls/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/polls/templates/polls/detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/polls/templates/polls/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/polls/templates/polls/results.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/polls/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/polls/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/polls/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/setup.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django-polls/setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/Pipfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/Pipfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/django-polls-0.1.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/helloworld_project/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/helloworld_project/helloworld_project/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/helloworld_project/helloworld_project/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/helloworld_project/helloworld_project/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/helloworld_project/helloworld_project/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/helloworld_project/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/helloworld_project/pages/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/helloworld_project/pages/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/helloworld_project/pages/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/helloworld_project/pages/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/helloworld_project/pages/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/helloworld_project/pages/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/helloworld_project/pages/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld/helloworld_project/pages/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/mysite/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/static/polls/images/background.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/static/polls/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/templates/polls/detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/templates/polls/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/templates/polls/results.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/polls/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/admin/base_site.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Pipfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Pipfile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Procfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/pages/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/pages/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/pages/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/pages/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/pages/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/pages/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/pages/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/pages/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/pages_project/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/pages_project/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/pages_project/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/pages_project/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/templates/pages/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/pages_project/templates/pages/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/runtime.txt" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1UqVsMJLTqd9zpyaVgLPGMIRGTZ" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e8743da7-1198-4b84-84f1-896a44c45ee7" name="Default Changelist" comment="" />
+      <created>1576084318024</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576084318024</updated>
+      <workItem from="1576084325570" duration="16000" />
+    </task>
+    <servers />
+  </component>
+</project>

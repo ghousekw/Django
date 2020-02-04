@@ -1,0 +1,174 @@
+1. python -m pipenv shell
+
+2. pipenv install django==2.2
+
+3. django-admin startproject products
+
+4. python manage.py migrate
+
+5. python manage.py startapp prods
+
+6. set the apps in installed_apps lists
+        INSTALLED_APPS = [
+        ...
+        'prods',
+        ]
+
+7. create a model named 'Product'
+        from django.db import models
+
+        # Create your models here.
+        class Product(models.Model):
+            name = models.CharField(max_length=100)
+            price = models.DecimalField(max_digits=9, decimal_places=2)
+            quantity = models.IntegerField()
+
+            def __str__(self):
+                return self.name
+
+8. create migrations to add into database
+        python manage.py makemigrations
+        python manage.py migrate
+
+9. Register the model to the admin panel
+        from django.contrib import admin
+        from .models import Product
+
+        # Register your models here.
+        admin.site.register(Product)
+
+10. create a superuser to login into admin panel
+        python manage.py createsuperuser
+
+11. Run server
+        python manage.py runserver
+
+12. login into admin
+        http://127.0.0.1:8000/admin
+        then > create two products in prods section
+
+Perform CRUD:
+-------------
+
+13. include url for 'prods' app
+        from django.contrib import admin
+        from django.urls import path, include
+
+        urlpatterns = [
+            path('', include("prods.urls")),
+            path('admin/', admin.site.urls),
+        ]
+
+14. create urls.py file in prods folder
+        from django.urls import path
+        from .views import list_products, create_product, update_product, delete_product
+
+        urlpatterns = [
+            path('', list_products, name="list_products"),
+            path('new', create_products, name="create_products"),
+            path('update/<int:id>', update_products, name="update_products"),
+            path('delete/<init:id>', delete_products, name="delete_products"),
+        ]
+
+15. create views for prods app
+        from django.shortcuts import render, redirect
+        from .models import Product
+        from .forms import ProductForm
+
+        # Create your views here.
+
+        # Listing all products
+        def list_products(request):
+            products = Product.objects.all()
+            # context name 'products' will be used in html
+            return render(request, 'products.html', {'products': products})
+
+        # Creating a product
+        def create_products(request):
+            form = ProductForm(request.POST or None)
+
+            # If form is valid, save and redirect to listing page
+            if(form.is_valid()):
+                form.save()
+                return redirect('list_products')
+            
+            return render(request, 'products-form.html', {'form':form})
+
+        # Updating a product
+        def update_products(request, id):
+            product = Product.objects.get(id=id)
+            form = ProductForm(request.POST or None, instance=product)
+
+            # If form is valid, save and redirect to listing page
+            if(form.is_valid()):
+                form.save()
+                return redirect('list_products')
+            
+            return render(request, 'products-form.html', {'form':form, 'product': product})
+
+        # Deleting a product
+        def delete_products(request, id):
+            product = Product.objects.get(id=id)
+
+            # if request method is POST, delete the product and redirect to listing page
+            if request.method == 'POST':
+                product.delete()
+                return redirect('list_products')
+            
+            return render(request, 'products-del.html', {'product': product})
+
+16. Create a form.py in prods app folder
+        from django import forms
+        from .models import Product
+
+        class ProductForm(forms.ModelForm):
+            class Meta:
+                model = Product
+                fields = ['name','price', 'quantity']
+
+17. create a template folder in prods folder
+
+18. create a products.html file
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Products</title>
+        </head>
+        <body>
+            <ul>
+                <!-- here name 'products' come from context name set in views file -->
+                {% for product in products %}
+                    <a href="{% url 'update_products' product.id %}">
+                        <li>{{ product.name }}</li>
+                    </a>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'create_products' %}">New Product</a>
+        </body>
+        </html>
+
+19. create a products-form.html file
+        <h1>New Product</h1>
+
+        <form action="new" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Save</button>
+        </form>
+
+        {% if product %}
+            <a href="{% url 'delete_products' product.id %}">Delete</a>
+        {% endif %}
+
+20. create a products-del.html file
+        <form method="post">
+            {% csrf_token %}
+            <h2>Are you sure you want to remove {{product.name}}</h2>
+            <button type="submit">Confirm</button>
+        </form>
+
+21. run the server 
+        python manage.py runserver
